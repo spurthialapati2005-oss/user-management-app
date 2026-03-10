@@ -20,7 +20,7 @@ app.use('/user-api',userApp)
 async function connectDB(){
     try {
     await connect(process.env.DB_URL)
-    const port = process.env.PORT
+    const port = process.env.PORT || 4000
     console.log("DB connected successfully")
     //start http server
     app.listen(port,()=>console.log(`Server started`))
